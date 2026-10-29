@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>关于我们 - 豆语咖啡 BEANSPEAK COFFEE</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/about.css">
+</head>
+<body data-page="about">
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <div class="header__logo-icon">
+          <span class="logo-bean-wrapper">
+            <span class="logo-bean"></span>
+          </span>
+        </div>
+        <span class="header__logo-text">
+          <span class="logo-text-brand">BeanSpeak</span>
+          <span class="logo-text-sub">COFFEE</span>
+        </span>
+      </a>
+
+      <button class="nav__toggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav">
+        <a href="index.html" class="nav__link" data-page="home">
+          <span class="nav__zh">首页</span>
+          <span class="nav__en">HOME</span>
+        </a>
+        <a href="about.html" class="nav__link nav__link--active" data-page="about">
+          <span class="nav__zh">关于我们</span>
+          <span class="nav__en">ABOUT US</span>
+        </a>
+        <a href="menu.html" class="nav__link" data-page="menu">
+          <span class="nav__zh">菜单订购</span>
+          <span class="nav__en">MENU &amp; ORDER</span>
+        </a>
+        <a href="contact.html" class="nav__link" data-page="contact">
+          <span class="nav__zh">联系我们</span>
+          <span class="nav__en">CONTACT US</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ MAIN ============ -->
+  <main>
+
+    <!-- Banner -->
+    <section class="banner about-banner">
+      <img class="banner__bg" src="images/25.jpg" alt="豆语咖啡品牌形象">
+      <div class="banner__content">
+        <h1 class="banner__title">浓浓咖啡 柔柔情怀</h1>
+        <p class="banner__subtitle">ABOUT BEANSPEAK COFFEE</p>
+      </div>
+    </section>
+
+    <!-- Product Introduction -->
+    <section class="section product-intro">
+      <div class="container">
+        <h2 class="section__title">产品介绍</h2>
+        <p class="section__subtitle">OUR PRODUCTS</p>
+
+        <div class="intro-carousel" id="introCarousel">
+          <!-- Slide 1 -->
+          <div class="intro-slide intro-slide--active" data-slide="0">
+            <div class="intro-slide__media">
+              <img class="intro-slide__img" src="images/35.jpg" alt="玄米拿铁 · Genmai Latte">
+              <button class="intro-slide__play" aria-label="播放视频">▶</button>
+            </div>
+            <div class="intro-slide__text">
+              <h3 class="intro-slide__title">玄米拿铁 · Genmai Latte</h3>
+              <p class="intro-slide__desc">
+                精选日本国产玄米，经过匠心烘焙后与我们的意式浓缩咖啡相遇。
+                玄米独特的焦香与米香，在温润的牛乳中缓缓释放，交织出层次丰富的温暖风味。
+                每一口都仿佛置身于京都的古老茶屋之中。
+              </p>
+              <p class="intro-slide__note">—— 豆语咖啡明星产品，每日限量供应</p>
+            </div>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="intro-slide" data-slide="1">
+            <div class="intro-slide__media">
+              <img class="intro-slide__img" src="images/1.jpg" alt="沫茶拿铁 · Matcha Latte">
+              <button class="intro-slide__play" aria-label="播放视频">▶</button>
+            </div>
+            <div class="intro-slide__text">
+              <h3 class="intro-slide__title">沫茶拿铁 · Matcha Latte</h3>
+              <p class="intro-slide__desc">
+                源自宇治的顶级抹茶，经由茶道家传统石磨慢研而成。
+                翠绿的茶粉与丝滑牛乳完美融合，微苦之后是悠长的回甘。
+                东方茶道美学与西方咖啡文化的优雅对话。
+              </p>
+              <p class="intro-slide__note">—— 每一杯都是对品质的执着追求</p>
+            </div>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="intro-slide" data-slide="2">
+            <div class="intro-slide__media">
+              <img class="intro-slide__img" src="images/38.jpg" alt="HOJICHA 焙茶拿铁">
+              <button class="intro-slide__play" aria-label="播放视频">▶</button>
+            </div>
+            <div class="intro-slide__text">
+              <h3 class="intro-slide__title">HOJICHA 焙茶拿铁</h3>
+              <p class="intro-slide__desc">
+                严选静冈深蒸煎茶，经高温深度焙制后释放出浓郁的焦糖香气。
+                焙茶的烟熏韵味与牛奶的醇厚甘甜相得益彰，
+                是冬日暖阳下最治愈的一杯热饮。
+              </p>
+              <p class="intro-slide__note">—— 温暖如初，始终如一</p>
+            </div>
+          </div>
+
+          <!-- Navigation -->
+          <div class="intro-nav">
+            <button class="intro-nav__btn intro-nav__btn--prev" id="introPrev" aria-label="上一个">← 上一款</button>
+            <div class="intro-nav__dots" id="introDots"></div>
+            <button class="intro-nav__btn intro-nav__btn--next" id="introNext" aria-label="下一个">下一款 →</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Timeline -->
+    <section class="section timeline-section">
+      <div class="container">
+        <h2 class="section__title">品牌历程</h2>
+        <p class="section__subtitle">OUR JOURNEY</p>
+
+        <div class="timeline">
+          <div class="timeline__line"></div>
+
+          <div class="timeline__entry timeline__entry--left">
+            <div class="timeline__card">
+              <div class="timeline__year">2008</div>
+              <h3 class="timeline__title">梦想起航</h3>
+              <p class="timeline__desc">
+                创始人张先生在上海静安区开设第一家豆语咖啡门店，
+                以"让每一杯咖啡都讲述故事"为初心。
+              </p>
+            </div>
+            <div class="timeline__dot"></div>
+          </div>
+
+          <div class="timeline__entry timeline__entry--right">
+            <div class="timeline__card">
+              <div class="timeline__year">2009</div>
+              <h3 class="timeline__title">品质认证</h3>
+              <p class="timeline__desc">
+                获得国际精品咖啡协会（SCA）认证，建立自有烘焙工坊，
+                实现从生豆到杯中的全流程品质把控。
+              </p>
+            </div>
+            <div class="timeline__dot"></div>
+          </div>
+
+          <div class="timeline__entry timeline__entry--left">
+            <div class="timeline__card">
+              <div class="timeline__year">2010</div>
+              <h3 class="timeline__title">融合创新</h3>
+              <p class="timeline__desc">
+                首创"玄米拿铁"系列，将东方传统谷物与西方咖啡文化完美结合，
+                迅速成为沪上热门话题。
+              </p>
+            </div>
+            <div class="timeline__dot"></div>
+          </div>
+
+          <div class="timeline__entry timeline__entry--right">
+            <div class="timeline__card">
+              <div class="timeline__year">2011</div>
+              <h3 class="timeline__title">城市拓展</h3>
+              <p class="timeline__desc">
+                先后在北京、杭州、成都开设分店，将豆语的温暖与品质
+                带给更多城市的咖啡爱好者。
+              </p>
+            </div>
+            <div class="timeline__dot"></div>
+          </div>
+
+          <div class="timeline__entry timeline__entry--left">
+            <div class="timeline__card">
+              <div class="timeline__year">2012</div>
+              <h3 class="timeline__title">品牌升级</h3>
+              <p class="timeline__desc">
+                全面升级品牌视觉与空间设计，确立"高端·温暖·专业"的品牌定位，
+                成为国内精品咖啡文化的重要推动者。
+              </p>
+            </div>
+            <div class="timeline__dot"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__links">
+        <a href="#">友情链接</a>
+        <a href="#">商务合作</a>
+        <a href="#">人才招聘</a>
+        <a href="about.html">关于我们</a>
+        <a href="contact.html">联系我们</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__col--left">
+        <div class="footer__logo">
+          <div class="footer__logo-icon">
+            <span class="logo-bean-wrapper">
+              <span class="logo-bean"></span>
+            </span>
+          </div>
+          <span class="footer__logo-text">
+            <span class="logo-text-brand">BeanSpeak</span>
+            <span class="logo-text-sub">COFFEE</span>
+          </span>
+        </div>
+        <p class="footer__contact">
+          地址：上海市静安区咖啡弄188号<br>
+          电话：021-5888-6666<br>
+          邮箱：hello@beanspeak.com
+        </p>
+      </div>
+      <div class="footer__col--center">
+        <p><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">沪ICP备2024000001号</a></p>
+        <p>&copy; 2024 BeanSpeak Coffee. All rights reserved.</p>
+      </div>
+      <div class="footer__col--right">
+        <a class="footer__social-icon" href="#" aria-label="微信" title="微信">
+          <img src="svg icon/微信.svg" alt="微信">
+        </a>
+        <a class="footer__social-icon" href="#" aria-label="抖音" title="抖音">
+          <img src="svg icon/抖音.svg" alt="抖音">
+        </a>
+        <a class="footer__social-icon" href="#" aria-label="新浪微博" title="新浪微博">
+          <img src="svg icon/新浪.svg" alt="新浪微博">
+        </a>
+        <a class="footer__social-icon" href="mailto:hello@beanspeak.com" aria-label="邮箱" title="邮箱">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/common.js"></script>
+  <script src="js/about.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      BeanSpeak.Nav.init();
+      if (BeanSpeak.AboutPage) BeanSpeak.AboutPage.init();
+    });
+  </script>
+</body>
+</html>

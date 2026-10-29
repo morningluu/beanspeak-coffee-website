@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>菜单与订购 - 豆语咖啡 BEANSPEAK COFFEE</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/menu.css">
+</head>
+<body data-page="menu">
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <div class="header__logo-icon">
+          <span class="logo-bean-wrapper">
+            <span class="logo-bean"></span>
+          </span>
+        </div>
+        <span class="header__logo-text">
+          <span class="logo-text-brand">BeanSpeak</span>
+          <span class="logo-text-sub">COFFEE</span>
+        </span>
+      </a>
+
+      <button class="nav__toggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav">
+        <a href="index.html" class="nav__link" data-page="home">
+          <span class="nav__zh">首页</span>
+          <span class="nav__en">HOME</span>
+        </a>
+        <a href="about.html" class="nav__link" data-page="about">
+          <span class="nav__zh">关于我们</span>
+          <span class="nav__en">ABOUT US</span>
+        </a>
+        <a href="menu.html" class="nav__link nav__link--active" data-page="menu">
+          <span class="nav__zh">菜单订购</span>
+          <span class="nav__en">MENU &amp; ORDER</span>
+        </a>
+        <a href="contact.html" class="nav__link" data-page="contact">
+          <span class="nav__zh">联系我们</span>
+          <span class="nav__en">CONTACT US</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ MAIN ============ -->
+  <main>
+
+    <!-- Banner -->
+    <section class="banner menu-banner">
+      <div class="banner__content">
+        <h1 class="banner__title">奶香浓郁 回味悠长</h1>
+        <p class="banner__subtitle">MENU &amp; ORDER</p>
+      </div>
+    </section>
+
+    <!-- Menu Layout -->
+    <section class="section menu-section">
+      <div class="container">
+        <div class="menu-layout">
+
+          <!-- Left: Category Sidebar -->
+          <aside class="category-sidebar">
+            <h3 class="category-sidebar__title">商品分类</h3>
+            <ul class="category-list" id="categoryList">
+              <li><button class="category-list__btn category-list__btn--active" data-category="all">全部商品</button></li>
+              <li><button class="category-list__btn" data-category="genmai">玄米拿铁</button></li>
+              <li><button class="category-list__btn" data-category="matcha">沫茶拿铁</button></li>
+              <li><button class="category-list__btn" data-category="hojicha">HOJICHA</button></li>
+              <li><button class="category-list__btn" data-category="cold">冷饮</button></li>
+              <li><button class="category-list__btn" data-category="hot">热饮</button></li>
+            </ul>
+          </aside>
+
+          <!-- Right: Product Grid Area -->
+          <div class="products-area">
+            <div class="product-grid" id="productGrid">
+              <!-- JS动态渲染 -->
+            </div>
+
+            <!-- Pagination -->
+            <div class="pagination" id="pagination">
+              <!-- JS动态渲染 -->
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ CART PANEL ============ -->
+  <aside class="cart-panel" id="cartPanel">
+    <div class="cart-panel__header">
+      <h3 class="cart-panel__title">
+        <svg class="cart-panel__title-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+          <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+        </svg>
+        购物车
+      </h3>
+      <button class="cart-panel__close" id="cartClose" aria-label="关闭购物车">&times;</button>
+    </div>
+
+    <div class="cart-panel__items" id="cartItems">
+      <!-- JS动态渲染 -->
+    </div>
+
+    <div class="cart-panel__footer">
+      <div class="cart-panel__total">
+        <span>合计：</span>
+        <span class="cart-panel__total-price" id="cartTotal">￥0</span>
+      </div>
+      <div class="cart-panel__actions">
+        <button class="btn btn--outline" id="cartClear">清空购物车</button>
+        <button class="btn btn--primary" id="cartOrder">下单</button>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Cart Toggle Button (Floating) -->
+  <button class="cart-float-btn" id="cartFloatBtn" aria-label="购物车">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="24" height="24">
+      <circle cx="9" cy="21" r="1"/><circle cx="20" cy="21" r="1"/>
+      <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"/>
+    </svg>
+    <span class="cart-float-btn__count" id="cartFloatCount"></span>
+  </button>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__links">
+        <a href="#">友情链接</a>
+        <a href="#">商务合作</a>
+        <a href="#">人才招聘</a>
+        <a href="about.html">关于我们</a>
+        <a href="contact.html">联系我们</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__col--left">
+        <div class="footer__logo">
+          <div class="footer__logo-icon">
+            <span class="logo-bean-wrapper">
+              <span class="logo-bean"></span>
+            </span>
+          </div>
+          <span class="footer__logo-text">
+            <span class="logo-text-brand">BeanSpeak</span>
+            <span class="logo-text-sub">COFFEE</span>
+          </span>
+        </div>
+        <p class="footer__contact">
+          地址：上海市静安区咖啡弄188号<br>
+          电话：021-5888-6666<br>
+          邮箱：hello@beanspeak.com
+        </p>
+      </div>
+      <div class="footer__col--center">
+        <p><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">沪ICP备2024000001号</a></p>
+        <p>&copy; 2024 BeanSpeak Coffee. All rights reserved.</p>
+      </div>
+      <div class="footer__col--right">
+        <a class="footer__social-icon" href="#" aria-label="微信" title="微信">
+          <img src="svg icon/微信.svg" alt="微信">
+        </a>
+        <a class="footer__social-icon" href="#" aria-label="抖音" title="抖音">
+          <img src="svg icon/抖音.svg" alt="抖音">
+        </a>
+        <a class="footer__social-icon" href="#" aria-label="新浪微博" title="新浪微博">
+          <img src="svg icon/新浪.svg" alt="新浪微博">
+        </a>
+        <a class="footer__social-icon" href="mailto:hello@beanspeak.com" aria-label="邮箱" title="邮箱">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/common.js"></script>
+  <script src="js/menu.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      BeanSpeak.Nav.init();
+      if (BeanSpeak.MenuPage) BeanSpeak.MenuPage.init();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>豆语咖啡 BEANSPEAK COFFEE - 首页</title>
+  <link rel="stylesheet" href="css/common.css">
+  <link rel="stylesheet" href="css/home.css">
+</head>
+<body data-page="home">
+
+  <!-- ============ HEADER ============ -->
+  <header class="header">
+    <div class="header__inner">
+      <a href="index.html" class="header__logo">
+        <div class="header__logo-icon">
+          <span class="logo-bean-wrapper">
+            <span class="logo-bean"></span>
+          </span>
+        </div>
+        <span class="header__logo-text">
+          <span class="logo-text-brand">BeanSpeak</span>
+          <span class="logo-text-sub">COFFEE</span>
+        </span>
+      </a>
+
+      <button class="nav__toggle" aria-label="菜单">
+        <span></span><span></span><span></span>
+      </button>
+
+      <nav class="nav">
+        <a href="index.html" class="nav__link nav__link--active" data-page="home">
+          <span class="nav__zh">首页</span>
+          <span class="nav__en">HOME</span>
+        </a>
+        <a href="about.html" class="nav__link" data-page="about">
+          <span class="nav__zh">关于我们</span>
+          <span class="nav__en">ABOUT US</span>
+        </a>
+        <a href="menu.html" class="nav__link" data-page="menu">
+          <span class="nav__zh">菜单订购</span>
+          <span class="nav__en">MENU &amp; ORDER</span>
+        </a>
+        <a href="contact.html" class="nav__link" data-page="contact">
+          <span class="nav__zh">联系我们</span>
+          <span class="nav__en">CONTACT US</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ============ MAIN ============ -->
+  <main>
+
+    <!-- Hero Banner -->
+    <section class="hero">
+      <div class="hero__bg">
+      <img src="images/24.jpg" alt="首页" class="your-style">
+      </div>
+      <div class="hero__overlay"></div>
+      <div class="hero__content">
+        <h1 class="hero__title">极致品位 一口香浓</h1>
+        <p class="hero__subtitle">Milky fragrance with long aftertaste</p>
+        <a href="menu.html" class="btn btn--primary hero__cta">探索我们的咖啡</a>
+      </div>
+      <div class="hero__scroll-indicator">
+        <span></span>
+      </div>
+    </section>
+
+    <!-- Featured Products Carousel -->
+    <section class="section featured">
+      <div class="container">
+        <h2 class="section__title">特品推荐</h2>
+        <p class="section__subtitle">FEATURED PRODUCTS</p>
+
+        <div class="carousel" id="featuredCarousel">
+          <button class="carousel__arrow carousel__arrow--left" aria-label="上一个">
+            &#10094;
+          </button>
+
+          <div class="carousel__viewport">
+            <div class="carousel__track" id="carouselTrack">
+              <!-- 卡片由JS动态渲染 -->
+            </div>
+          </div>
+
+          <button class="carousel__arrow carousel__arrow--right" aria-label="下一个">
+            &#10095;
+          </button>
+
+          <div class="carousel__dots" id="carouselDots"></div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Promo + Environment -->
+    <section class="section promo-section">
+      <div class="container">
+        <div class="promo-grid">
+          <!-- Left: Promotions -->
+          <div class="promo-grid__left">
+            <h2 class="section__title section__title--left">促销活动</h2>
+            <p class="section__subtitle section__subtitle--left">PROMOTIONS</p>
+
+            <div class="promo-card">
+              <img class="promo-card__img" src="images/25.jpg" alt="玄米拿铁">
+              <div class="promo-card__body">
+                <h3 class="promo-card__title">新品尝鲜 · 玄米拿铁限时特惠</h3>
+                <p class="promo-card__desc">源自日本的玄米与浓郁拿铁的完美融合，限时8折尝鲜价。</p>
+                <span class="promo-card__tag">限时优惠</span>
+                <button class="promo-card__toggle" aria-expanded="false">
+                  <span class="promo-card__toggle-text">展开详情</span>
+                  <span class="promo-card__toggle-icon">▼</span>
+                </button>
+                <div class="promo-card__detail">
+                  <div class="promo-card__detail-inner">
+                    <p><strong>产品名称：</strong>玄米拿铁（Genmai Latte）</p>
+                    <p><strong>规格选择：</strong>中杯 360ml / 大杯 480ml</p>
+                    <p><strong>原价：</strong>中杯 ￥32 / 大杯 ￥38</p>
+                    <p><strong>尝鲜价：</strong>中杯 ￥25.6 / 大杯 ￥30.4（8折）</p>
+                    <p><strong>活动时间：</strong>2024年6月1日 - 6月30日</p>
+                    <p><strong>产品亮点：</strong>精选日本国产玄米，匠心烘焙后搭配意式浓缩，焦香与米香交织，口感层次丰富。每日限量供应，售完即止。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="promo-card">
+              <img class="promo-card__img" src="images/29.jpg" alt="会员日第二杯半价">
+              <div class="promo-card__body">
+                <h3 class="promo-card__title">会员日 · 第二杯半价</h3>
+                <p class="promo-card__desc">每周三会员专享，全场饮品第二杯半价，不容错过。</p>
+                <span class="promo-card__tag">会员专享</span>
+                <button class="promo-card__toggle" aria-expanded="false">
+                  <span class="promo-card__toggle-text">展开详情</span>
+                  <span class="promo-card__toggle-icon">▼</span>
+                </button>
+                <div class="promo-card__detail">
+                  <div class="promo-card__detail-inner">
+                    <p><strong>活动规则：</strong>每周三全天，会员购买任意饮品，第二杯享半价优惠（仅限同价或低价位商品）。</p>
+                    <p><strong>适用门店：</strong>全国所有豆语咖啡直营门店</p>
+                    <p><strong>参与方式：</strong>结账时出示会员码即可自动享受优惠</p>
+                    <p><strong>会员注册：</strong>微信搜索"豆语咖啡"小程序，手机号一键注册，即享首杯8折新人礼。</p>
+                    <p><strong>温馨提示：</strong>本活动不与其他优惠同享，每人每日限参与一次。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="promo-card">
+              <img class="promo-card__img" src="images/30.jpg" alt="夏日冰饮季">
+              <div class="promo-card__body">
+                <h3 class="promo-card__title">夏日冰饮季 · 满100减20</h3>
+                <p class="promo-card__desc">全场冷饮系列满100元立减20元，清凉一夏从豆语开始。</p>
+                <span class="promo-card__tag">季节活动</span>
+                <button class="promo-card__toggle" aria-expanded="false">
+                  <span class="promo-card__toggle-text">展开详情</span>
+                  <span class="promo-card__toggle-icon">▼</span>
+                </button>
+                <div class="promo-card__detail">
+                  <div class="promo-card__detail-inner">
+                    <p><strong>活动时间：</strong>2024年7月1日 - 8月31日</p>
+                    <p><strong>参与商品：</strong>冷萃冰咖啡、冰拿铁、冰美式、冰沫茶拿铁、冰HOJICHA拿铁、各类水果冰茶</p>
+                    <p><strong>优惠方式：</strong>单笔消费满100元立减20元，满200元立减50元</p>
+                    <p><strong>叠加规则：</strong>可与会员折扣叠加使用，不与第二杯半价同享</p>
+                    <p><strong>外卖同步：</strong>美团/饿了么平台同步参与，线上下单自动满减。</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Environment -->
+          <div class="promo-grid__right">
+            <h2 class="section__title section__title--left">优雅环境</h2>
+            <p class="section__subtitle section__subtitle--left">ELEGANT ENVIRONMENT</p>
+
+            <div class="env-card">
+              <img class="env-card__img" src="images/32.jpg" alt="静谧的咖啡空间">
+              <div class="env-card__overlay">
+                <h3 class="env-card__title">静谧的咖啡空间</h3>
+                <p class="env-card__desc">温暖的灯光、舒适的座椅——为您营造远离喧嚣的私人角落。</p>
+              </div>
+            </div>
+
+            <div class="env-card">
+              <img class="env-card__img" src="images/34.jpg" alt="手工冲泡体验区">
+              <div class="env-card__overlay">
+                <h3 class="env-card__title">手工冲泡体验区</h3>
+                <p class="env-card__desc">近距离感受咖啡师手工冲泡的艺术，品味每一杯的匠心与温度。</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ============ FOOTER ============ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__links">
+        <a href="#">友情链接</a>
+        <a href="#">商务合作</a>
+        <a href="#">人才招聘</a>
+        <a href="about.html">关于我们</a>
+        <a href="contact.html">联系我们</a>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <div class="footer__col--left">
+        <div class="footer__logo">
+          <div class="footer__logo-icon">
+            <span class="logo-bean-wrapper">
+              <span class="logo-bean"></span>
+            </span>
+          </div>
+          <span class="footer__logo-text">
+            <span class="logo-text-brand">BeanSpeak</span>
+            <span class="logo-text-sub">COFFEE</span>
+          </span>
+        </div>
+        <p class="footer__contact">
+          地址：上海市静安区咖啡弄188号<br>
+          电话：021-5888-6666<br>
+          邮箱：hello@beanspeak.com
+        </p>
+      </div>
+      <div class="footer__col--center">
+        <p><a href="https://beian.miit.gov.cn/" target="_blank" rel="noopener">沪ICP备2024000001号</a></p>
+        <p>&copy; 2024 BeanSpeak Coffee. All rights reserved.</p>
+      </div>
+      <div class="footer__col--right">
+        <a class="footer__social-icon" href="#" aria-label="微信" title="微信">
+          <img src="svg icon/微信.svg" alt="微信">
+        </a>
+        <a class="footer__social-icon" href="#" aria-label="抖音" title="抖音">
+          <img src="svg icon/抖音.svg" alt="抖音">
+        </a>
+        <a class="footer__social-icon" href="#" aria-label="新浪微博" title="新浪微博">
+          <img src="svg icon/新浪.svg" alt="新浪微博">
+        </a>
+        <a class="footer__social-icon" href="mailto:hello@beanspeak.com" aria-label="邮箱" title="邮箱">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 4L12 13 2 4"/></svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="js/common.js"></script>
+  <script src="js/home.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      BeanSpeak.Nav.init();
+      if (BeanSpeak.HomePage) BeanSpeak.HomePage.init();
+    });
+  </script>
+</body>
+</html>

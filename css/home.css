@@ -1,0 +1,569 @@
+/* ============================================
+   BeanSpeak Coffee - Home Page Styles
+   Hero Banner, Carousel, Promo/Env Cards
+   ============================================ */
+
+/* --- Hero Banner --- */
+.hero {
+  position: relative;
+  height: calc(100vh - var(--nav-height));
+  min-height: 560px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+}
+
+.hero__bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero__placeholder {
+  width: 100%;
+  height: 100%;
+  border-radius: 0;
+  background: linear-gradient(160deg,
+    #2D0A0A 0%,
+    var(--secondary) 25%,
+    var(--primary) 50%,
+    var(--primary-dark) 75%,
+    #2D0A0A 100%
+  );
+  font-size: 3rem;
+}
+
+.hero__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0,0,0,0.4) 0%,
+    rgba(0,0,0,0.6) 50%,
+    rgba(0,0,0,0.85) 100%
+  );
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 20px;
+  animation: heroFadeUp 1s ease;
+}
+
+.hero__title {
+  font-size: 3.5rem;
+  color: var(--white);
+  letter-spacing: 6px;
+  margin-bottom: 16px;
+  text-shadow: 0 2px 12px rgba(0,0,0,0.5);
+}
+
+.hero__subtitle {
+  font-size: 1.15rem;
+  color: var(--accent);
+  letter-spacing: 4px;
+  margin-bottom: 40px;
+  opacity: 0.85;
+}
+
+.hero__cta {
+  font-size: 1rem;
+  padding: 16px 48px;
+}
+
+.hero__scroll-indicator {
+  position: absolute;
+  bottom: 32px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.hero__scroll-indicator span {
+  display: block;
+  width: 24px;
+  height: 40px;
+  border: 2px solid rgba(212, 168, 83, 0.5);
+  border-radius: 12px;
+  position: relative;
+}
+
+.hero__scroll-indicator span::after {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 2px;
+  animation: scrollBounce 2s ease infinite;
+}
+
+@keyframes heroFadeUp {
+  from { opacity: 0; transform: translateY(40px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes scrollBounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); opacity: 1; }
+  50% { transform: translateX(-50%) translateY(12px); opacity: 0.3; }
+}
+
+/* --- Featured / Carousel --- */
+.featured {
+  background: linear-gradient(to bottom, var(--bg-dark), var(--bg-dark-alt));
+}
+
+.carousel {
+  position: relative;
+  margin-top: 16px;
+}
+
+.carousel__viewport {
+  overflow: hidden;
+  margin: 0 48px;
+}
+
+.carousel__track {
+  display: flex;
+  gap: 24px;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  padding: 8px 0;
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+/* Product Card */
+.product-card {
+  flex: 0 0 calc(25% - 18px);
+  min-width: 220px;
+  scroll-snap-align: start;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.06);
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: all var(--transition-normal);
+  cursor: pointer;
+}
+
+.product-card:hover {
+  transform: var(--lift-hover);
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(212, 168, 83, 0.3);
+}
+
+.product-card__img {
+  aspect-ratio: 3 / 2;
+  width: 100%;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.product-card__body {
+  padding: 20px;
+  background: rgba(30, 5, 5, 0.85);
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+
+.product-card__name {
+  font-size: 1.05rem;
+  font-family: var(--font-heading);
+  color: var(--accent);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.product-card__desc {
+  font-size: 0.85rem;
+  color: #ccc;
+  line-height: 1.6;
+}
+
+/* Carousel Arrows */
+.carousel__arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.08);
+  color: var(--accent);
+  font-size: 1.2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all var(--transition-normal);
+  z-index: 10;
+  border: 1px solid rgba(212,168,83,0.2);
+}
+
+.carousel__arrow:hover {
+  background: var(--accent);
+  color: var(--bg-dark);
+  box-shadow: var(--shadow-md);
+}
+
+.carousel__arrow--left { left: 0; }
+.carousel__arrow--right { right: 0; }
+
+/* Carousel Dots */
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 24px;
+}
+
+.carousel__dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(255,255,255,0.15);
+  transition: all var(--transition-normal);
+}
+
+.carousel__dot--active {
+  background: var(--accent);
+  transform: scale(1.3);
+}
+
+/* --- Promo Grid --- */
+.promo-section {
+  background: var(--bg-dark-alt);
+}
+
+.promo-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 48px;
+  align-items: stretch;
+}
+
+.promo-grid__left,
+.promo-grid__right {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.section__title--left,
+.section__subtitle--left {
+  text-align: left;
+}
+
+/* Promo Cards */
+.promo-card {
+  display: flex;
+  gap: 20px;
+  flex: 1;
+  position: relative;
+  background: rgba(255,255,255,0.02);
+  border: 1px solid rgba(255,255,255,0.06);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color var(--transition-normal);
+  margin-bottom: 20px;
+}
+
+.promo-card:hover {
+  box-shadow: var(--shadow-hover);
+  border-color: rgba(212, 168, 83, 0.25);
+}
+
+.promo-card:last-child {
+  margin-bottom: 0;
+}
+
+.promo-card__img {
+  flex: 0 0 160px;
+  width: 160px;
+  object-fit: cover;
+  border-radius: var(--radius-lg) 0 0 var(--radius-lg);
+}
+
+.promo-card__body {
+  padding: 20px 20px 20px 0;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.promo-card__title {
+  font-size: 1rem;
+  font-family: var(--font-heading);
+  color: var(--white);
+  margin-bottom: 8px;
+  letter-spacing: 1px;
+}
+
+.promo-card__desc {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+.promo-card__tag {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(212, 168, 83, 0.15);
+  color: var(--accent);
+  font-size: 0.75rem;
+  border-radius: var(--radius-sm);
+  letter-spacing: 1px;
+}
+
+/* --- Expanded State: image fills card, text overlays --- */
+.promo-card--expanded {
+  flex: 0 0 auto;
+  overflow: visible;
+}
+
+.promo-card--expanded .promo-card__img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  flex: unset;
+  border-radius: var(--radius-lg);
+  opacity: 0.22;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.promo-card--expanded .promo-card__body {
+  padding: 24px;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(20,3,3,0.94) 0%, rgba(30,5,5,0.85) 100%);
+}
+
+/* Promo Card Toggle (Collapsible Detail) */
+.promo-card__toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 0;
+  margin-top: 8px;
+  color: var(--accent);
+  font-size: 0.8rem;
+  letter-spacing: 1px;
+  transition: all var(--transition-fast);
+  opacity: 0.8;
+}
+
+.promo-card__toggle:hover {
+  opacity: 1;
+}
+
+.promo-card__toggle-icon {
+  display: inline-block;
+  font-size: 0.6rem;
+  transition: transform var(--transition-normal);
+}
+
+.promo-card__toggle[aria-expanded="true"] .promo-card__toggle-icon {
+  transform: rotate(180deg);
+}
+
+.promo-card__detail {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 300ms ease;
+  margin-top: 0;
+}
+
+.promo-card--expanded .promo-card__detail {
+  max-height: 600px;
+  margin-top: 16px;
+}
+
+.promo-card__detail-inner {
+  padding: 16px;
+  background: rgba(212, 168, 83, 0.06);
+  border-left: 3px solid var(--accent);
+  border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+  font-size: 0.82rem;
+  color: var(--text-light);
+  line-height: 1.8;
+}
+
+.promo-card__detail-inner p {
+  margin-bottom: 4px;
+}
+
+.promo-card__detail-inner p:last-child {
+  margin-bottom: 0;
+}
+
+.promo-card__detail-inner strong {
+  color: var(--accent);
+  font-weight: 600;
+}
+
+/* Environment Cards */
+.env-card {
+  position: relative;
+  flex: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 20px;
+  transition: all var(--transition-normal);
+}
+
+.env-card:last-child {
+  margin-bottom: 0;
+}
+
+.env-card:hover {
+  transform: var(--lift-hover);
+  box-shadow: var(--shadow-hover);
+}
+
+.env-card__img {
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  min-height: auto;
+  border-radius: 0;
+  font-size: 0.8rem;
+}
+
+.env-card__overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.85) 0%, rgba(0,0,0,0.1) 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 24px;
+}
+
+.env-card__title {
+  font-size: 1.15rem;
+  font-family: var(--font-heading);
+  color: var(--accent);
+  margin-bottom: 6px;
+  letter-spacing: 1px;
+}
+
+.env-card__desc {
+  font-size: 0.85rem;
+  color: var(--text-light);
+  line-height: 1.5;
+}
+
+/* =========================================
+   Responsive - Tablet
+   ========================================= */
+@media (max-width: 1024px) {
+  .hero__title {
+    font-size: 2.5rem;
+    letter-spacing: 4px;
+  }
+
+  .promo-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .product-card {
+    flex: 0 0 calc(33.333% - 16px);
+  }
+}
+
+/* =========================================
+   Responsive - Mobile
+   ========================================= */
+@media (max-width: 768px) {
+  .hero {
+    min-height: 480px;
+    height: 70vh;
+  }
+
+  .hero__title {
+    font-size: 1.8rem;
+    letter-spacing: 2px;
+  }
+
+  .hero__subtitle {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
+
+  .hero__cta {
+    padding: 12px 32px;
+    font-size: 0.85rem;
+  }
+
+  .carousel__viewport {
+    margin: 0 36px;
+  }
+
+  .product-card {
+    flex: 0 0 calc(100% - 0px);
+    min-width: auto;
+  }
+
+  .promo-card {
+    flex-direction: column;
+  }
+
+  .promo-card__img {
+    flex: 0 0 auto;
+    aspect-ratio: 16 / 9;
+    width: 100%;
+  }
+
+  .promo-card__body {
+    padding: 16px;
+  }
+
+  .carousel__arrow {
+    width: 36px;
+    height: 36px;
+    font-size: 1rem;
+  }
+
+  .env-card__overlay {
+    padding: 16px;
+  }
+}
+
+@media (max-width: 430px) {
+  .hero__title {
+    font-size: 1.5rem;
+  }
+
+  .carousel__viewport {
+    margin: 0 28px;
+  }
+
+  .carousel__arrow {
+    width: 30px;
+    height: 30px;
+    font-size: 0.85rem;
+  }
+}
